@@ -1,0 +1,407 @@
+fileFormatVersion: 2
+guid: 6378ba70f0b63d84db3096d1c9309ea7
+timeCreated: 1430326511
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: laserfist spritesheet_0
+    21300002: laserfist spritesheet_1
+    21300004: laserfist spritesheet_2
+    21300006: laserfist spritesheet_3
+    21300008: laserfist spritesheet_4
+    21300010: laserfist spritesheet_5
+    21300012: laserfist spritesheet_6
+    21300014: laserfist spritesheet_7
+    21300016: laserfist spritesheet_8
+    21300018: laserfist spritesheet_9
+    21300020: laserfist spritesheet_10
+    21300022: laserfist spritesheet_11
+    21300024: laserfist spritesheet_12
+    21300026: laserfist spritesheet_13
+    21300028: laserfist spritesheet_14
+    21300030: laserfist spritesheet_15
+    21300032: laserfist spritesheet_16
+    21300034: laserfist spritesheet_17
+    21300036: laserfist spritesheet_18
+    21300038: laserfist spritesheet_19
+    21300040: laserfist spritesheet_20
+    21300042: laserfist spritesheet_21
+    21300044: laserfist spritesheet_22
+    21300046: laserfist spritesheet_23
+    21300048: laserfist spritesheet_24
+    21300050: laserfist spritesheet_25
+    21300052: laserfist spritesheet_26
+    21300054: laserfist spritesheet_27
+    21300056: laserfist spritesheet_28
+    21300058: laserfist spritesheet_29
+    21300060: laserfist spritesheet_30
+    21300062: laserfist spritesheet_31
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: laserfist spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 1850
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 2216
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 2407
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 2584
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 2775
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 2953
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 3144
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 3330
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 3510
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 3697
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 3882
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 4063
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 4255
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 4441
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 4620
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 4810
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 4989
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 5174
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 5361
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 5551
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 5733
+        y: 0
+        width: 180
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
