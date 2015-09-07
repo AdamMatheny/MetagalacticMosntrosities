@@ -1,0 +1,283 @@
+fileFormatVersion: 2
+guid: 2f5ce52a9cb47f845933b2433e0aef75
+timeCreated: 1435079900
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: laserfist_New_0
+    21300002: laserfist_New_1
+    21300004: laserfist_New_2
+    21300006: laserfist_New_3
+    21300008: laserfist_New_4
+    21300010: laserfist_New_5
+    21300012: laserfist_New_6
+    21300014: laserfist_New_7
+    21300016: laserfist_New_8
+    21300018: laserfist_New_9
+    21300020: laserfist_New_10
+    21300022: laserfist_New_11
+    21300024: laserfist_New_12
+    21300026: laserfist_New_13
+    21300028: laserfist_New_14
+    21300030: laserfist_New_15
+    21300032: laserfist_New_16
+    21300034: laserfist_New_17
+    21300036: laserfist_New_18
+    21300038: laserfist_Josh_0
+    21300040: laserfist_Josh_1
+    21300042: laserfist_Josh_2
+    21300044: laserfist_Josh_3
+    21300046: laserfist_Josh_4
+    21300048: laserfist_Josh_5
+    21300050: laserfist_Josh_6
+    21300052: laserfist_Josh_7
+    21300054: laserfist_Josh_8
+    21300056: laserfist_Josh_9
+    21300058: laserfist_Josh_10
+    21300060: laserfist_Josh_11
+    21300062: laserfist_Josh_12
+    21300064: laserfist_Josh_13
+    21300066: laserfist_Josh_14
+    21300068: laserfist_Josh_15
+    21300070: laserfist_Josh_16
+    21300072: laserfist_Josh_17
+    21300074: laserfist_Josh_18
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: laserfist_Josh_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1020
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1020
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1020
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1020
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1020
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_5
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1020
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_6
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1020
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_7
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1020
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_8
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1020
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_9
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1020
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_11
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_12
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_13
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_14
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_15
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_16
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_17
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: laserfist_Josh_18
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 160
+        height: 1020
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

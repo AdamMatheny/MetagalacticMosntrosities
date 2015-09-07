@@ -1,0 +1,451 @@
+fileFormatVersion: 2
+guid: db8d10ced10d6b64b8997cda2c4072fb
+timeCreated: 1431915245
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ShieldSprite_V2_0
+    21300002: ShieldSprite_V2_1
+    21300004: ShieldSprite_V2_2
+    21300006: ShieldSprite_V2_3
+    21300008: ShieldSprite_V2_4
+    21300010: ShieldSprite_V2_5
+    21300012: ShieldSprite_V2_6
+    21300014: ShieldSprite_V2_7
+    21300016: ShieldSprite_V2_8
+    21300018: ShieldSprite_V2_9
+    21300020: ShieldSprite_V2_10
+    21300022: ShieldSprite_V2_11
+    21300024: ShieldSprite_V2_12
+    21300026: ShieldSprite_V2_13
+    21300028: ShieldSprite_V2_14
+    21300030: ShieldSprite_V2_15
+    21300032: ShieldSprite_V2_16
+    21300034: ShieldSprite_V2_17
+    21300036: ShieldSprite_V2_18
+    21300038: ShieldSprite_V2_19
+    21300040: ShieldSprite_V2_20
+    21300042: ShieldSprite_V2_21
+    21300044: ShieldSprite_V2_22
+    21300046: ShieldSprite_V2_23
+    21300048: ShieldSprite_V2_24
+    21300050: ShieldSprite_V2_25
+    21300052: ShieldSprite_V2_26
+    21300054: ShieldSprite_V2_27
+    21300056: ShieldSprite_V2_28
+    21300058: ShieldSprite_V2_29
+    21300060: ShieldSprite_V2_30
+    21300062: ShieldSprite_V2_31
+    21300064: ShieldSprite_V2_32
+    21300066: ShieldSprite_V2_33
+    21300068: ShieldSprite_V2_34
+    21300070: ShieldSprite_V2_35
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: ShieldSprite_V2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_2
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_3
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_4
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_5
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_6
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_7
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_8
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_9
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_10
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_11
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_12
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_13
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_14
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_15
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_16
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_17
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_18
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_19
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_20
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_21
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_22
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_23
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_24
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_25
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_26
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_27
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_28
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_29
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_30
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_31
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_32
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_33
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_34
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldSprite_V2_35
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 0
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

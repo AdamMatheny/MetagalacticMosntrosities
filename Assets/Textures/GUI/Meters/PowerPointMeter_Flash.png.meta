@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: d6d2f3d35a605e24caef7f78e189f7e5
+timeCreated: 1432329212
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PowerUpTimerMeter_Flash_0
+    21300002: PowerUpTimerMeter_Flash_1
+    21300004: PowerUpTimerMeter_Flash_2
+    21300006: PowerUpTimerMeter_Flash_3
+    21300008: PowerUpTimerMeter_Flash_4
+    21300010: PowerUpTimerMeter_Flash_5
+    21300012: PowerUpTimerMeter_Flash_6
+    21300014: PowerUpTimerMeter_Flash_7
+    21300016: PowerUpTimerMeter_Flash_8
+    21300018: PowerUpTimerMeter_Flash_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: PowerUpTimerMeter_Flash_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540
+        width: 780
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PowerUpTimerMeter_Flash_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 780
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PowerUpTimerMeter_Flash_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 420
+        width: 780
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PowerUpTimerMeter_Flash_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 780
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PowerUpTimerMeter_Flash_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 780
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PowerUpTimerMeter_Flash_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 780
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PowerUpTimerMeter_Flash_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
+        width: 780
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PowerUpTimerMeter_Flash_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 780
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PowerUpTimerMeter_Flash_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 60
+        width: 780
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PowerUpTimerMeter_Flash_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 780
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
