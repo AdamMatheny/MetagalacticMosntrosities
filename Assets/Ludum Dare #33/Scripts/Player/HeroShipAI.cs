@@ -5,31 +5,34 @@ public class HeroShipAI : MonoBehaviour
 {
 	public BossGenericScript mBoss;
 	public Transform mTarget;
+	public Vector3 mTargetPoint;
 	public int mHitsRemaining = 10;
 	public int mMaxHits = 10;
-
+	
 	public GameObject mHeroBullet;
 	public GameObject mDodgeObject;
-	Vector3 mDodgePoint;
+	public Vector3 mDodgePoint;
+	public Vector3 mDodgeDir;
+
 
 	public float mSpeed = 16f;
 	public Vector3 mMoveDir = Vector3.zero;
-
+	
 	public float mShootTimerDefault = 0.1f;
 	public float mShootTimer = 2f;
 	public Transform mBulletSpawnPoint;
-
+	
 	public float mDodgeTimer = 0f;
-
+	
 	[SerializeField] private GameObject mShipSprite;
 	[SerializeField] private ParticleSystem mThrusters;
-
+	
 	public float mInvincibleTimer = 0f;
 	[SerializeField] private ParticleSystem mHitEffect;
-
+	
 	public GameObject mDeathEffect;
 	public GameObject mNextHeroShip;
-
+	
 	public bool mHasEntered = false;
 
 	// Use this for initialization
@@ -43,6 +46,7 @@ public class HeroShipAI : MonoBehaviour
 			{
 				mBoss = FindObjectOfType<BossGenericScript>();
 				mTarget = mBoss.transform;
+				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (-5,5), Random.Range (-2,2),0);
 			}
 		}
 	}
@@ -57,7 +61,13 @@ public class HeroShipAI : MonoBehaviour
 			{
 				mBoss = FindObjectOfType<BossGenericScript>();
 				mTarget = mBoss.transform;
+				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (-5,5), Random.Range (-2,2),0);
 			}
+		}
+
+		if(mTarget != null && Vector3.Distance (transform.position,mTargetPoint) < 1f)
+		{
+			mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (-5,5), Random.Range (-2,2),0);
 		}
 
 		//Toggle hit effect sparks ~Adam
@@ -78,13 +88,14 @@ public class HeroShipAI : MonoBehaviour
 		//Try to get under the target point ~Adam
 		if(mDodgeTimer <= 0f)
 		{
-			mMoveDir = Vector3.Normalize ((mTarget.position+(Vector3.down*20f))-transform.position);
+			mMoveDir = Vector3.Normalize (mTargetPoint-transform.position);
 
 		}
 		//Dodge away ~Adam
 		else
 		{
-			mMoveDir = Vector3.Normalize (transform.position-mDodgePoint);
+			//mMoveDir = Vector3.Normalize (transform.position-mDodgePoint);
+			mMoveDir = mDodgeDir;
 			mDodgeTimer -= Time.deltaTime;
 		}
 
@@ -99,7 +110,7 @@ public class HeroShipAI : MonoBehaviour
 		mMoveDir *= mSpeed * 0.01f;
 		if(mDodgeTimer > 0f)
 		{
-			mMoveDir*=1.2f;
+			mMoveDir*=1.5f;
 		}
 		mMoveDir = new Vector3(mMoveDir.x, mMoveDir.y, 0f);
 
@@ -123,30 +134,50 @@ public class HeroShipAI : MonoBehaviour
 			mShootTimer -= Time.deltaTime;
 
 			//Keep ship within screen bounds
-			if(transform.position.x < -20f)
+			if(transform.position.x <= -20f)
 			{
 				transform.position = new Vector3(-20f, transform.position.y, transform.position.z);
 				mMoveDir*=-1f;
 				mDodgeTimer = 0f;
+				if(mTarget != null)
+				{
+					mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (0,5), 0,0);
+					mTargetPoint = new Vector3(-19f, mTargetPoint.y, mTargetPoint.z);
+				}
 			}
-			if (transform.position.x > 20f)
+			if (transform.position.x >= 20f)
 			{
 				transform.position = new Vector3(20f, transform.position.y, transform.position.z);
 				mMoveDir*=-1f;
 				mDodgeTimer = 0f;
+				if(mTarget != null)
+				{
+					mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (-5,0), 0,0);
+					mTargetPoint = new Vector3(19f, mTargetPoint.y, mTargetPoint.z);
+				}
 			}
 
-			if(transform.position.y < -33f)
+			if(transform.position.y <= -33f)
 			{
 				transform.position = new Vector3(transform.position.x, -33f, transform.position.z);
 				mMoveDir*=-1f;
 				mDodgeTimer = 0f;
+				if(mTarget != null)
+				{
+					mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(0, Random.Range (0,2),0);
+					mTargetPoint = new Vector3(mTargetPoint.x, -32f, mTargetPoint.z);
+				}
 			}
-			if (transform.position.y > 23f)
+			if (transform.position.y >= 23f)
 			{
 				transform.position = new Vector3(transform.position.x, 23, transform.position.z);
 				mMoveDir*=-1f;
 				mDodgeTimer = 0f;
+				if(mTarget != null)
+				{
+					mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(0, Random.Range (-2,0),0);
+					mTargetPoint = new Vector3(mTargetPoint.x, 22f, mTargetPoint.z);
+				}
 			}
 		}
 
@@ -203,18 +234,62 @@ public class HeroShipAI : MonoBehaviour
 			HitHeroShip(1);
 		}
 
+
+		//Keep target point within screen bounds
+		if(mTarget != null)
+		{
+			if(mTargetPoint.x <= -20f)
+			{
+				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (0,5), 0,0);
+				mTargetPoint = new Vector3(-19f, mTargetPoint.y, mTargetPoint.z);
+
+			}
+			if (mTargetPoint.x >= 20f)
+			{
+				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (-5,0), 0,0);
+				mTargetPoint = new Vector3(19f, mTargetPoint.y, mTargetPoint.z);
+			}
+			
+			if(mTargetPoint.y <= -33f)
+			{
+				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(0, Random.Range (0,2),0);
+				mTargetPoint = new Vector3(mTargetPoint.x, -32f, mTargetPoint.z);
+			}
+			if (mTargetPoint.y >= 23f)
+			{
+				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(0, Random.Range (-2,0),0);
+				mTargetPoint = new Vector3(mTargetPoint.x, 22f, mTargetPoint.z);
+			}
+		}
 	}//END of Update()
 
 	void OnTriggerEnter(Collider other)
 	{
 
-		if(other.gameObject != this.gameObject && other.tag != "Player Bullet" && mInvincibleTimer <= 0.5f)
+		if(other.gameObject != this.gameObject && other.tag != "Player Bullet")// && mInvincibleTimer <= 1f)
 		{
 			//Debug.Log ("enter "+other.gameObject.name);
-			mDodgeTimer = 0.5f;
 			mDodgeObject = other.gameObject;
-			mDodgePoint = transform.position+Vector3.Normalize (mDodgeObject.transform.position-transform.position)*0.1f;
-			mMoveDir = Vector3.Normalize (transform.position-mDodgePoint);
+			//mDodgePoint = transform.position+Vector3.Normalize (mDodgeObject.transform.position-transform.position)*0.1f;
+			//mMoveDir = Vector3.Normalize (transform.position-mDodgePoint);
+			if(mDodgeTimer < 0.2f)
+			{
+				mDodgePoint = transform.position+Vector3.Normalize (mDodgeObject.transform.position-transform.position)*0.1f;
+				mDodgeDir = Vector3.Normalize (transform.position-mDodgePoint);
+				if(!other.GetComponent<LDBossBeam>() || Random.value <0.5f)
+				{
+					if(other.transform.position.x<transform.position.x)
+					{
+						mDodgeDir = Quaternion.Euler (0f,0f,-90f) * mDodgeDir;
+					}
+					else
+					{
+						mDodgeDir = Quaternion.Euler (0f,0f,90f) * mDodgeDir;
+					}
+				}
+			}
+			mDodgeTimer = 0.5f;
+
 		}
 	}//END of OnTriggerEnter()
 
@@ -222,14 +297,31 @@ public class HeroShipAI : MonoBehaviour
 	{
 
 		//else
-		if(other.gameObject != this.gameObject && other.tag != "Player Bullet" && mInvincibleTimer <= 0.5f)
+		if(other.gameObject != this.gameObject && other.tag != "Player Bullet")// && mInvincibleTimer <= 1f)
 		{
 			//Debug.Log ("Stay "+other.gameObject.name);
 
-			mDodgeTimer = 0.5f;
 			mDodgeObject = other.gameObject;
-			mDodgePoint = transform.position+Vector3.Normalize (mDodgeObject.transform.position-transform.position)*0.1f;
-			mMoveDir = Vector3.Normalize (transform.position-mDodgePoint);
+			//mDodgePoint = transform.position+Vector3.Normalize (mDodgeObject.transform.position-transform.position)*0.1f;
+			//mMoveDir = Vector3.Normalize (transform.position-mDodgePoint);
+			if(mDodgeTimer < 0.2f)
+			{
+				mDodgePoint = transform.position+Vector3.Normalize (mDodgeObject.transform.position-transform.position)*0.1f;
+				mDodgeDir = Vector3.Normalize (transform.position-mDodgePoint);
+				if(!other.GetComponent<LDBossBeam>() || Random.value <0.5f)
+				{
+					if(other.transform.position.x<transform.position.x)
+					{
+						mDodgeDir = Quaternion.Euler (0f,0f,-90f) * mDodgeDir;
+					}
+					else
+					{
+						mDodgeDir = Quaternion.Euler (0f,0f,90f) * mDodgeDir;
+					}
+				}
+			}
+			mDodgeTimer =0.5f;
+
 		}
 	}//END of OnTriggerStay()
 

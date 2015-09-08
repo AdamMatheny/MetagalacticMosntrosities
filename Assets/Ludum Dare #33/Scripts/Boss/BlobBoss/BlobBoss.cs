@@ -85,7 +85,7 @@ public class BlobBoss : BossGenericScript
 
 	void BlobBarrage()
 	{
-		mBarrageTimer = 2.5f;
+		mBarrageTimer = 5f;
 
 		if(mBlobBossBarrage != null)
 		{
