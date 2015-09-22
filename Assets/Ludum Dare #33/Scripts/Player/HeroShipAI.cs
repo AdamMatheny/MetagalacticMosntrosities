@@ -35,6 +35,12 @@ public class HeroShipAI : MonoBehaviour
 	
 	public bool mHasEntered = false;
 
+	[SerializeField] private bool mGoForCenter = false;
+	Vector3 mLastPos = Vector3.zero;
+	[SerializeField] private float mStuckTimer = 1f;
+	[SerializeField] private float mDodgeStuckTimer = 1f;
+	[SerializeField] private float mStuckDefault = 1f;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -68,12 +74,22 @@ public class HeroShipAI : MonoBehaviour
 		if(mTarget != null && Vector3.Distance (transform.position,mTargetPoint) < 1f)
 		{
 			mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (-5,5), Random.Range (-2,2),0);
+			mGoForCenter = false;
+			mStuckTimer = mStuckDefault;
+		}
+
+		if(mDodgeStuckTimer > mStuckDefault*-1f)
+		{
+			mDodgeStuckTimer-=Time.deltaTime;
 		}
 
 		//Toggle hit effect sparks ~Adam
 		if(mInvincibleTimer >= 0f)
 		{
 			mInvincibleTimer -= Time.deltaTime;
+			mDodgeTimer = 0f;
+			mDodgeStuckTimer = mStuckDefault;
+			mGoForCenter = false;
 			if(mHitEffect.isStopped)
 			{
 				mHitEffect.Play();
@@ -84,6 +100,28 @@ public class HeroShipAI : MonoBehaviour
 			mHitEffect.Stop();
 		}
 
+		//Check for if it's been stuck in place ~Adam
+		if(mLastPos == transform.position)
+		{
+			mStuckTimer -= Time.deltaTime;
+			if(mStuckTimer <= 0f)
+			{
+				mGoForCenter = true;
+			}
+		}
+		else
+		{
+			mLastPos = transform.position;
+		}
+
+		//Break out of what it's doing and fly to the center of the boss if stuck ~Adam
+		if(mGoForCenter && mTarget != null)
+		{
+			mTargetPoint = mTarget.transform.position +(Vector3.up*5f);
+			mMoveDir = Vector3.Normalize (mTargetPoint-transform.position);
+
+			//mTargetPoint = mTarget.transform.position;
+		}
 
 		//Try to get under the target point ~Adam
 		if(mDodgeTimer <= 0f)
@@ -128,65 +166,66 @@ public class HeroShipAI : MonoBehaviour
 				mHasEntered = true;
 			}
 		}
-		//Don't let the ship leave the bounds of the screen ~Adamelse
+		#region Don't let the ship leave the bounds of the screen ~Adamelse
+		//Count down the shoot timer ~Adam
+		mShootTimer -= Time.deltaTime;
+
+		//Keep ship within screen bounds
+		if(transform.position.x <= -20f)
 		{
-			//Count down the shoot timer ~Adam
-			mShootTimer -= Time.deltaTime;
-
-			//Keep ship within screen bounds
-			if(transform.position.x <= -20f)
+			transform.position = new Vector3(-20f, transform.position.y, transform.position.z);
+			mMoveDir*=-1f;
+			mDodgeTimer = 0f;
+			if(mTarget != null)
 			{
-				transform.position = new Vector3(-20f, transform.position.y, transform.position.z);
-				mMoveDir*=-1f;
-				mDodgeTimer = 0f;
-				if(mTarget != null)
-				{
-					mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (0,5), 0,0);
-					mTargetPoint = new Vector3(-19f, mTargetPoint.y, mTargetPoint.z);
-				}
+				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (0,5), 0,0);
+				mTargetPoint = new Vector3(-19f, mTargetPoint.y, mTargetPoint.z);
 			}
-			if (transform.position.x >= 20f)
+		}
+		if (transform.position.x >= 20f)
+		{
+			transform.position = new Vector3(20f, transform.position.y, transform.position.z);
+			mMoveDir*=-1f;
+			mDodgeTimer = 0f;
+			if(mTarget != null)
 			{
-				transform.position = new Vector3(20f, transform.position.y, transform.position.z);
-				mMoveDir*=-1f;
-				mDodgeTimer = 0f;
-				if(mTarget != null)
-				{
-					mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (-5,0), 0,0);
-					mTargetPoint = new Vector3(19f, mTargetPoint.y, mTargetPoint.z);
-				}
-			}
-
-			if(transform.position.y <= -33f)
-			{
-				transform.position = new Vector3(transform.position.x, -33f, transform.position.z);
-				mMoveDir*=-1f;
-				mDodgeTimer = 0f;
-				if(mTarget != null)
-				{
-					mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(0, Random.Range (0,2),0);
-					mTargetPoint = new Vector3(mTargetPoint.x, -32f, mTargetPoint.z);
-				}
-			}
-			if (transform.position.y >= 23f)
-			{
-				transform.position = new Vector3(transform.position.x, 23, transform.position.z);
-				mMoveDir*=-1f;
-				mDodgeTimer = 0f;
-				if(mTarget != null)
-				{
-					mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(0, Random.Range (-2,0),0);
-					mTargetPoint = new Vector3(mTargetPoint.x, 22f, mTargetPoint.z);
-				}
+				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (-5,0), 0,0);
+				mTargetPoint = new Vector3(19f, mTargetPoint.y, mTargetPoint.z);
 			}
 		}
 
+		if(transform.position.y <= -33f)
+		{
+			transform.position = new Vector3(transform.position.x, -33f, transform.position.z);
+			mMoveDir*=-1f;
+			mDodgeTimer = 0f;
+			if(mTarget != null)
+			{
+				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(0, Random.Range (0,2),0);
+				mTargetPoint = new Vector3(mTargetPoint.x, -32f, mTargetPoint.z);
+			}
+		}
+		if (transform.position.y >= 23f)
+		{
+			transform.position = new Vector3(transform.position.x, 23, transform.position.z);
+			mMoveDir*=-1f;
+			mDodgeTimer = 0f;
+			if(mTarget != null)
+			{
+				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(0, Random.Range (-2,0),0);
+				mTargetPoint = new Vector3(mTargetPoint.x, 22f, mTargetPoint.z);
+			}
+		}
+		#endregion
 
 		//Don't try to go out of bounds due to the boss being too close to the bottom of the screen ~Adam
 		
 		if(mMoveDir.y < 0f && transform.position.y <-32f)
 		{
-			mMoveDir = new Vector3(mMoveDir.x,0f,mMoveDir.z);
+			if(!mGoForCenter)
+			{
+				mMoveDir = new Vector3(mMoveDir.x,0f,mMoveDir.z);
+			}
 		}
 
 		//Move the ship ~Adam
@@ -268,27 +307,42 @@ public class HeroShipAI : MonoBehaviour
 
 		if(other.gameObject != this.gameObject && other.tag != "Player Bullet")// && mInvincibleTimer <= 1f)
 		{
-			//Debug.Log ("enter "+other.gameObject.name);
-			mDodgeObject = other.gameObject;
-			//mDodgePoint = transform.position+Vector3.Normalize (mDodgeObject.transform.position-transform.position)*0.1f;
-			//mMoveDir = Vector3.Normalize (transform.position-mDodgePoint);
-			if(mDodgeTimer < 0.2f)
+			if(mDodgeStuckTimer > 0 || mDodgeStuckTimer < mStuckDefault*-1)
 			{
-				mDodgePoint = transform.position+Vector3.Normalize (mDodgeObject.transform.position-transform.position)*0.1f;
-				mDodgeDir = Vector3.Normalize (transform.position-mDodgePoint);
-				if(!other.GetComponent<LDBossBeam>() || Random.value <0.5f)
+				if(mDodgeStuckTimer < mStuckDefault*-1)
 				{
-					if(other.transform.position.x<transform.position.x)
+					mDodgeStuckTimer = mStuckDefault;
+				}
+
+				//Debug.Log ("enter "+other.gameObject.name);
+				mDodgeObject = other.gameObject;
+				//mDodgePoint = transform.position+Vector3.Normalize (mDodgeObject.transform.position-transform.position)*0.1f;
+				//mMoveDir = Vector3.Normalize (transform.position-mDodgePoint);
+				if(mDodgeTimer < 0f)
+				{
+					mDodgePoint = transform.position+Vector3.Normalize (mDodgeObject.transform.position-transform.position)*0.1f;
+					mDodgeDir = Vector3.Normalize (transform.position-mDodgePoint);
+					if(!other.GetComponent<LDBossBeam>() || Random.value <0.5f)
 					{
-						mDodgeDir = Quaternion.Euler (0f,0f,-90f) * mDodgeDir;
-					}
-					else
-					{
-						mDodgeDir = Quaternion.Euler (0f,0f,90f) * mDodgeDir;
+						if(other.transform.position.x<transform.position.x)
+						{
+							mDodgeDir = Quaternion.Euler (0f,0f,-90f) * mDodgeDir;
+						}
+						else
+						{
+							mDodgeDir = Quaternion.Euler (0f,0f,90f) * mDodgeDir;
+						}
 					}
 				}
+				if(mInvincibleTimer <= 0f)
+				{
+					mDodgeTimer = 0.3f;
+				}
 			}
-			mDodgeTimer = 0.5f;
+			else
+			{
+				mGoForCenter = true;
+			}
 
 		}
 	}//END of OnTriggerEnter()
@@ -339,6 +393,7 @@ public class HeroShipAI : MonoBehaviour
 	{
 		if(mInvincibleTimer <= 0f)
 		{
+			mGoForCenter = false;
 			mInvincibleTimer = 3f;
 			mHitsRemaining -= damage;
 			if(GetComponent<AudioSource>() != null)
