@@ -66,17 +66,17 @@ public class SwarmBoss : BossGenericScript
 				foreach(FakeEnemy faker in FindObjectsOfType<FakeEnemy>())
 				{
 					mCurrentHealth ++;
-					if(mWeakPoints.Count >0)
+					if(mWeakPointTransforms.Count >0)
 					{
-						mWeakPoints[0] = faker.transform;
+						mWeakPointTransforms[0] = faker.transform;
 					}
 				}
 				foreach(EnemyShipAI enemy in FindObjectsOfType<EnemyShipAI>())
 				{
 					mCurrentHealth ++;
-					if(mWeakPoints.Count >0)
+					if(mWeakPointTransforms.Count >0)
 					{
-						mWeakPoints[0] = enemy.transform;
+						mWeakPointTransforms[0] = enemy.transform;
 					}
 				}
 			}

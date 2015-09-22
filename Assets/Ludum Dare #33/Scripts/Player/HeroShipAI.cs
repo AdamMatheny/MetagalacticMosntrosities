@@ -41,6 +41,10 @@ public class HeroShipAI : MonoBehaviour
 	[SerializeField] private float mDodgeStuckTimer = 1f;
 	[SerializeField] private float mStuckDefault = 1f;
 
+
+	[SerializeField] private GameObject mSuperWeapon;
+	[SerializeField] private bool mHasFiredSuper = false;
+	[SerializeField] private bool mFiringSuper = false;
 	// Use this for initialization
 	void Start () 
 	{
@@ -83,6 +87,17 @@ public class HeroShipAI : MonoBehaviour
 			mDodgeStuckTimer-=Time.deltaTime;
 		}
 
+		if(!mHasFiredSuper && mHitsRemaining < 5)
+		{
+			mHasFiredSuper = true;
+			mFiringSuper = true;
+			mSuperWeapon.SetActive (true);
+		}
+		if(mFiringSuper && !mSuperWeapon.activeInHierarchy)
+		{
+			mFiringSuper = false;
+		}
+
 		//Toggle hit effect sparks ~Adam
 		if(mInvincibleTimer >= 0f)
 		{
@@ -101,7 +116,7 @@ public class HeroShipAI : MonoBehaviour
 		}
 
 		//Check for if it's been stuck in place ~Adam
-		if(mLastPos == transform.position)
+		if(mLastPos == transform.position && !mFiringSuper)
 		{
 			mStuckTimer -= Time.deltaTime;
 			if(mStuckTimer <= 0f)
@@ -229,7 +244,10 @@ public class HeroShipAI : MonoBehaviour
 		}
 
 		//Move the ship ~Adam
-		transform.Translate(mMoveDir);
+		if(!mFiringSuper)
+		{
+			transform.Translate(mMoveDir);
+		}
 
 		//Animate the ship ~Adam
 		if(mShipSprite.GetComponent<Animator>() != null)

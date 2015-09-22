@@ -7,7 +7,7 @@ public class BossGenericScript : MonoBehaviour
 {
 
 	//Put generic boss code here
-	public List<Transform> mWeakPoints = new List<Transform>();
+	public List<Transform> mWeakPointTransforms = new List<Transform>();
 
 	public HeroShipAI mHero;
 
@@ -33,6 +33,8 @@ public class BossGenericScript : MonoBehaviour
 
 	public float[] mBounds;
 	public float mEntryTime = 3f;
+
+	public List<BossWeakPoint> mWeakPoints;
 
 	public virtual void Start()
 	{
@@ -62,12 +64,16 @@ public class BossGenericScript : MonoBehaviour
 				mOverheated = true;
 				mCurrentOverheat = 10f;
 			}
-			if(mWeakPoints.Count >0 && mWeakPoints[0] != null)
+			if(mWeakPointTransforms.Count >0 && mWeakPointTransforms[0] != null)
 			{
-				mHero.mTarget = mWeakPoints[0];
+				mHero.mTarget = mWeakPointTransforms[0];
 			}
 		}
 
+		if(mWeakPointTransforms.Count >0 && mWeakPointTransforms[0] == null)
+		{
+			mWeakPointTransforms.Remove(null);
+		}
 		if(mWeakPoints.Count >0 && mWeakPoints[0] == null)
 		{
 			mWeakPoints.Remove(null);
