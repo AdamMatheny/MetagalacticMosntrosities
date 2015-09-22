@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BlobBoss : BossGenericScript 
 {
@@ -20,6 +21,9 @@ public class BlobBoss : BossGenericScript
 
 	public float mBarrageTimer = 0f;
 
+	public List<GameObject> mDestructibleParts;
+	public List<int> mDestructibleHealth;
+	public GameObject mDestructionBoom;
 
 
 	//Set starting health and find the body to flash when hit ~Adam
@@ -60,6 +64,15 @@ public class BlobBoss : BossGenericScript
 		else
 		{
 			mAnimator.runtimeAnimatorController = mAnimationStages[4];
+		}
+
+		//Destroy body parts ~Adam
+		if(mDestructibleHealth.Count >0 && mDestructibleParts.Count == mDestructibleHealth.Count && mhealth < mDestructibleHealth[0])
+		{
+			Instantiate (mDestructionBoom, mDestructibleParts[0].transform.position, Quaternion.identity);
+			Destroy (mDestructibleParts[0]);
+			mDestructibleHealth.Remove (mDestructibleHealth[0]);
+			mDestructibleParts.Remove (mDestructibleParts[0]);
 		}
 
 		if(!mDying)

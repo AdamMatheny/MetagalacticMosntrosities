@@ -804,7 +804,10 @@ public class EnemyShipAI : MonoBehaviour
 //			}
 //		}
 		mSwarmGridPosition.GetComponent<SwarmGridSlot>().mOccupied = false;
-		mScoreManager.AdjustScore(mPointValue, mKillerNumber <= 1);
+		if(mScoreManager != null)
+		{
+			mScoreManager.AdjustScore(mPointValue, mKillerNumber <= 1);
+		}
 		
 		if(mDeathRequired)
 		{
