@@ -29,13 +29,15 @@ public class LDBossDeathWeapon : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (player == null) {
+		if (player == null) 
+		{
 
 			player = GameObject.FindGameObjectWithTag ("Player");
 		}
 
 		//Turn weapon off if overheated or dead ~Adam
-		if (mBossCentral.mOverheated || mBossCentral.mDying) {
+		if (mBossCentral.mOverheated || mBossCentral.mDying) 
+		{
 			mDeathWeapon.SetActive (false);
 			mButtonIcon.enabled = false;
 		}
