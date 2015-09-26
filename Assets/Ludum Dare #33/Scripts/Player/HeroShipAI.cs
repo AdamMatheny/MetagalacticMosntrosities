@@ -17,7 +17,8 @@ public class HeroShipAI : MonoBehaviour
 
 	public float mSpeed = 16f;
 	public Vector3 mMoveDir = Vector3.zero;
-	
+	float mDefaultSpeed;
+
 	public float mShootTimerDefault = 0.1f;
 	public float mShootTimer = 2f;
 	public Transform mBulletSpawnPoint;
@@ -45,10 +46,14 @@ public class HeroShipAI : MonoBehaviour
 	[SerializeField] private GameObject mSuperWeapon;
 	[SerializeField] private bool mHasFiredSuper = false;
 	[SerializeField] private bool mFiringSuper = false;
+
+	float mHoverTimer = 0.5f;
+
 	// Use this for initialization
 	void Start () 
 	{
 		mMaxHits = mHitsRemaining;
+		mDefaultSpeed = mSpeed;
 		//Find the Boss ~Adam
 		if(mTarget == null || mBoss == null)
 		{
@@ -71,15 +76,39 @@ public class HeroShipAI : MonoBehaviour
 			{
 				mBoss = FindObjectOfType<BossGenericScript>();
 				mTarget = mBoss.transform;
-				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (-5,5), Random.Range (-2,2),0);
+				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (-3,3), Random.Range (-2,2),0);
 			}
 		}
 
-		if(mTarget != null && Vector3.Distance (transform.position,mTargetPoint) < 1f)
+		if(mTarget != null && Vector3.Distance (transform.position,mTargetPoint) < 2f)
 		{
-			mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (-5,5), Random.Range (-2,2),0);
-			mGoForCenter = false;
-			mStuckTimer = mStuckDefault;
+			//mHoverTimer -= Time.deltaTime;.
+			mSpeed = Mathf.Lerp (mSpeed, 2f, 0.3f);
+			if(Vector3.Distance (transform.position,mTargetPoint) < 0.5f)
+			{
+				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (-3,3), Random.Range (-2,2),0);
+				mGoForCenter = false;
+				mStuckTimer = mStuckDefault;
+			}
+
+		}
+		else
+		{
+			if(mSpeed <= mDefaultSpeed-0.5f)
+			{
+				if(mTarget != null && Vector3.Distance (transform.position,mTargetPoint) < 3f)
+				{
+					mSpeed = Mathf.Lerp (mSpeed, mDefaultSpeed/2f, 0.1f);
+				}
+				else
+				{
+					mSpeed = Mathf.Lerp (mSpeed, mDefaultSpeed, 0.3f);
+				}
+			}
+		}
+		if(mDodgeTimer > 0f || mGoForCenter)
+		{
+			mSpeed = mDefaultSpeed;
 		}
 
 		if(mDodgeStuckTimer > mStuckDefault*-1f)
@@ -193,7 +222,7 @@ public class HeroShipAI : MonoBehaviour
 			mDodgeTimer = 0f;
 			if(mTarget != null)
 			{
-				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (0,5), 0,0);
+				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (0,3), 0,0);
 				mTargetPoint = new Vector3(-19f, mTargetPoint.y, mTargetPoint.z);
 			}
 		}
@@ -204,7 +233,7 @@ public class HeroShipAI : MonoBehaviour
 			mDodgeTimer = 0f;
 			if(mTarget != null)
 			{
-				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (-5,0), 0,0);
+				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (-3,0), 0,0);
 				mTargetPoint = new Vector3(19f, mTargetPoint.y, mTargetPoint.z);
 			}
 		}
