@@ -5,6 +5,7 @@ using XInputDotNetPure;
 
 public class BossEye : BossWeakPoint 
 {
+
 	public BossGenericScript mBossBody;
 
 	public GameObject BuildUp;
@@ -12,6 +13,9 @@ public class BossEye : BossWeakPoint
 	public GameObject mTarget;
 	
 	public GameObject bullet;
+	public GameObject bulletSpread;
+
+	public bool mTripleShot;
 
 	public int health;
 	
@@ -34,6 +38,16 @@ public class BossEye : BossWeakPoint
 	
 	public override void Update()
 	{
+		float bossHealth = mBossCentral.GetComponent<Boss1> ().mCurrentHealth;
+		float threshHold = mBossCentral.GetComponent<LDBossDeathWeapon> ().mHealthThreshHold;
+
+		if (bossHealth <= threshHold) {
+
+			mTripleShot = true;
+		} else {
+
+			mTripleShot = false;
+		}
 
 		//For flashing when hit ~Adam
 		if(mMainBodySprite != null)
@@ -79,6 +93,22 @@ public class BossEye : BossWeakPoint
 			if(bullet != null)
 			{
 				Instantiate(bullet, transform.position + new Vector3(0, 4), Quaternion.identity);
+
+				if(mTripleShot){
+
+					GameObject bulletOne;
+					GameObject bulletTwo;
+					bulletOne = Instantiate(bulletSpread, transform.position, Quaternion.identity) as GameObject;
+					bulletOne.GetComponent<EnemyBulletController>().mFireDir = Quaternion.Euler(0f,0f,30f) * Vector3.Normalize(mBossCentral.mHero.transform.position - transform.position);
+					bulletOne.transform.LookAt (bulletOne.transform.position + bulletOne.GetComponent<EnemyBulletController>().mFireDir);
+					bulletOne.transform.rotation = Quaternion.Euler (new Vector3 (90f, 0f, 0f) + bulletOne.transform.rotation.eulerAngles);
+					
+					
+					bulletTwo = Instantiate(bulletSpread, transform.position, Quaternion.identity) as GameObject;
+					bulletTwo.GetComponent<EnemyBulletController>().mFireDir = Quaternion.Euler(0f,0f,-30f) * Vector3.Normalize(mBossCentral.mHero.transform.position - transform.position);
+					bulletTwo.transform.LookAt (bulletTwo.transform.position + bulletTwo.GetComponent<EnemyBulletController>().mFireDir);
+					bulletTwo.transform.rotation = Quaternion.Euler (new Vector3 (90f, 0f, 0f) + bulletTwo.transform.rotation.eulerAngles);
+				}
 			}
 			Debug.Log("SHOOT!");
 		}
