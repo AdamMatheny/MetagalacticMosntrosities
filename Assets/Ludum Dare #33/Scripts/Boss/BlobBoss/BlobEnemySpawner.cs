@@ -8,11 +8,16 @@ using XInputDotNetPure;
 public class BlobEnemySpawner : MonoBehaviour 
 {
 	public BossGenericScript mBossBody;
-	
+
+	public bool mShootSession = false;
 
 	public GameObject mTarget;
 	
 	public GameObject bullet;
+
+	public GameObject mVomit;
+
+	//public bool checkActiveVomit;
 	
 
 	public float timer = 0.5f;
@@ -36,6 +41,8 @@ public class BlobEnemySpawner : MonoBehaviour
 	
 	public void Update()
 	{
+
+		//checkActiveVomit = mVomit.activeSelf;
 		
 		if(mTarget == null)
 		{
@@ -49,10 +56,26 @@ public class BlobEnemySpawner : MonoBehaviour
 			mBossBody.mChargeReady = false;
 			mBossBody.mCurrentCharge = 0;
 			mBossBody.mOverheated = true;
-		}
-		
 
-		
+			mShootSession = true;
+		}
+
+		/*if (mShootSession && !mVomit.activeSelf) {
+
+			mVomit.SetActive (true);
+		} else if(mShootSession && mVomit.activeSelf){
+
+			mVomit.SetActive(false);
+		}*/
+
+		if (mShootSession && !(mVomit.activeSelf)) {
+
+			mVomit.SetActive (true);
+		} else if (!mShootSession && mVomit.activeSelf) {
+
+			mVomit.SetActive (false);
+		}
+
 		if (mShooting && timerTemp > 0) 
 		{
 			
@@ -69,6 +92,7 @@ public class BlobEnemySpawner : MonoBehaviour
 				timerTemp = 10f;
 				mShooting = false;
 				mShotsFired = 0;
+				mShootSession = false;
 			}
 		}
 		
