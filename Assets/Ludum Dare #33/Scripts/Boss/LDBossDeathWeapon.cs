@@ -10,6 +10,10 @@ public class LDBossDeathWeapon : MonoBehaviour
 	public GameObject player;
 	public bool ram;
 
+	public bool boss5;
+	public GameObject laser;
+	public BossBulletRotater rotateScript;
+
 	public BossGenericScript mBossCentral;
 	public int mHealthThreshHold = 30;
 	public GameObject mDeathWeapon;
@@ -38,11 +42,24 @@ public class LDBossDeathWeapon : MonoBehaviour
 		//Turn weapon off if overheated or dead ~Adam
 		if (mBossCentral.mOverheated || mBossCentral.mDying) 
 		{
-			mDeathWeapon.SetActive (false);
+			if(mDeathWeapon != null){
+
+				mDeathWeapon.SetActive (false);
+			}
 			mButtonIcon.enabled = false;
 		}
 		//Do stuff when below the Health Threshhold ~Adam
 		else if (mBossCentral.mCurrentHealth <= mHealthThreshHold) {
+
+			if(boss5){
+
+				laser.SetActive(true);
+				if(rotateScript != null){
+
+					rotateScript.enabled = true;
+				}
+			}
+
 			//Turn on the UI Icon for Right Trigger ~Adam
 			mButtonIcon.enabled = true;
 
@@ -58,12 +75,25 @@ public class LDBossDeathWeapon : MonoBehaviour
 			}
 			//Turn Off Weapon when Right Trigger is released ~Adam
 			else {
-				mDeathWeapon.SetActive (false);
+
+				if(mDeathWeapon != null){
+
+					mDeathWeapon.SetActive (false);
+				}
+
 				mBossCentral.mCurrentOverheat -= Time.deltaTime;
 			}
 		} else {
 
 			mButtonIcon.enabled = false;
+
+			if(boss5){
+
+				if(rotateScript != null){
+					
+					rotateScript.enabled = false;
+				}
+			}
 		}
 
 	}//END of Update()

@@ -18,7 +18,7 @@ public class LDBossBeam : MonoBehaviour
 		}
 	}
 
-	public void OnTriggerStay(Collider other)
+	/*public void OnTriggerStay(Collider other)
 	{
 		if (other.gameObject.name == "ShipCore") 
 		{
@@ -27,6 +27,6 @@ public class LDBossBeam : MonoBehaviour
 				other.transform.parent.gameObject.GetComponent<HeroShipAI>().HitHeroShip(mHitDamage);
 			}
 		}
-	}
+	}*/
 
 }
