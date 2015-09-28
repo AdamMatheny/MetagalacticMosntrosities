@@ -83,7 +83,14 @@ public class HeroShipAI : MonoBehaviour
 		if(mTarget != null && Vector3.Distance (transform.position,mTargetPoint) < 2f)
 		{
 			//mHoverTimer -= Time.deltaTime;.
-			mSpeed = Mathf.Lerp (mSpeed, 2f, 0.3f);
+			if(Mathf.Abs (transform.position.x - mTarget.position.x) < 2f)
+			{
+				mSpeed = Mathf.Lerp (mSpeed, 2f, 0.3f);
+			}
+			else
+			{
+				mSpeed = Mathf.Lerp (mSpeed, mDefaultSpeed, 0.1f);
+			}
 			if(Vector3.Distance (transform.position,mTargetPoint) < 0.5f)
 			{
 				mTargetPoint = mTarget.transform.position +(Vector3.down*20f) +  new Vector3(Random.Range (-3,3), Random.Range (-2,2),0);
@@ -102,7 +109,7 @@ public class HeroShipAI : MonoBehaviour
 				}
 				else
 				{
-					mSpeed = Mathf.Lerp (mSpeed, mDefaultSpeed, 0.3f);
+					mSpeed = mDefaultSpeed;
 				}
 			}
 		}
