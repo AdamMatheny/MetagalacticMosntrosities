@@ -64,7 +64,7 @@ public class LDBossDeathWeapon : MonoBehaviour
 			mButtonIcon.enabled = true;
 
 			//Fire weapon with Right Trigger button ~Adam
-			if (InputManager.ActiveDevice.RightTrigger.IsPressed) {
+			if (InputManager.ActiveDevice.RightTrigger.IsPressed || Input.GetKey (KeyCode.Space)) {
 				mDeathWeapon.SetActive (true);
 				mBossCentral.mCurrentOverheat += Time.deltaTime * mOverheatSpeed;
 

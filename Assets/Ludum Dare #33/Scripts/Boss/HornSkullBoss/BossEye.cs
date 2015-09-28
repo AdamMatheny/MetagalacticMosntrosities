@@ -25,6 +25,7 @@ public class BossEye : BossWeakPoint
 	public SpriteRenderer mMainBodySprite;
 
 	bool mShooting = false;
+	[SerializeField] private bool mBoss1 = false;
 
 	public override void Start()
 	{
@@ -38,16 +39,21 @@ public class BossEye : BossWeakPoint
 	
 	public override void Update()
 	{
-		float bossHealth = mBossCentral.GetComponent<Boss1> ().mCurrentHealth;
-		float threshHold = mBossCentral.GetComponent<LDBossDeathWeapon> ().mHealthThreshHold;
-
-		if (bossHealth <= threshHold) {
-
-			mTripleShot = true;
-		} else {
-
-			mTripleShot = false;
+		if(mBoss1)
+		{
+			float bossHealth = mBossCentral.GetComponent<Boss1> ().mCurrentHealth;
+		
+			float threshHold = mBossCentral.GetComponent<LDBossDeathWeapon> ().mHealthThreshHold;
+			
+			if (bossHealth <= threshHold) {
+				
+				mTripleShot = true;
+			} else {
+				
+				mTripleShot = false;
+			}
 		}
+
 
 		//For flashing when hit ~Adam
 		if(mMainBodySprite != null)
