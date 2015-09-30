@@ -55,22 +55,23 @@ public class LDBossHorn : BossWeakPoint
 
 	public override void TakeDamage()
 	{
-
-		health --;
-
-		//For flashing when hit ~Adam
-		if(mHornSprite != null)
+		if(!mInvincible)
 		{
-			mHornSprite.color = Color.Lerp (mHornSprite.color, Color.red,1f);
+			health --;
+
+			//For flashing when hit ~Adam
+			if(mHornSprite != null)
+			{
+				mHornSprite.color = Color.Lerp (mHornSprite.color, Color.red,1f);
+			}
+
+			base.TakeDamage ();
+
+			if (health <= 0) 
+			{
+				BlowUpHorn();
+			}
 		}
-
-		base.TakeDamage ();
-
-		if (health <= 0) {
-
-			BlowUpHorn();
-		}
-
 
 	}
 

@@ -25,7 +25,8 @@ public class Boss5 : BossGenericScript {
 	}
 	
 	// Update is called once per frame
-	public override void Update () {
+	public override void Update () 
+	{
 	
 		base.Update ();
 
@@ -34,7 +35,8 @@ public class Boss5 : BossGenericScript {
 			mDying = true;
 		}
 
-		if ((Input.GetButtonDown ("FireGun") || InputManager.ActiveDevice.Action1.WasPressed) && mChargeReady && !mOverheated) {
+		if ((Input.GetButtonDown ("FireGun") || InputManager.ActiveDevice.Action1.WasPressed) && mChargeReady && !mOverheated) 
+		{
 
 			mChargeReady = false;
 			mCurrentCharge = 0;
@@ -73,6 +75,11 @@ public class Boss5 : BossGenericScript {
 					weapon.SetActive (true);
 				}
 			}
+		}
+		if(mWeakPoints.Count <=1)
+		{
+			mCurrentCharge = 0;
+			mChargeReady = false;
 		}
 	}
 

@@ -4,10 +4,10 @@ using System.Collections;
 public class SecondaryShake : MonoBehaviour {
 
 
-	public bool Purple;
-	public bool Red;
-	public bool Green;
-	public bool Teal;
+	public bool Purple; //Boss weak point explosion and Hero Ship death ~Adam
+	public bool Red; //Boss Death effect ~Adam
+	public bool Green; //Hero Ship getting hit ~Adam
+	public bool Teal;  //Hornet boss minion death ~Adam
 
 	void Start(){
 

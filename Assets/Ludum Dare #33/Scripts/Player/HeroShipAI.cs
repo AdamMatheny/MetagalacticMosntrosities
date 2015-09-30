@@ -141,6 +141,7 @@ public class HeroShipAI : MonoBehaviour
 			mDodgeTimer = 0f;
 			mDodgeStuckTimer = mStuckDefault;
 			mGoForCenter = false;
+			mHitEffect.gameObject.SetActive (true);
 			if(mHitEffect.isStopped)
 			{
 				mHitEffect.Play();
@@ -148,6 +149,7 @@ public class HeroShipAI : MonoBehaviour
 		}
 		else if(mHitEffect.isPlaying)
 		{
+			mHitEffect.gameObject.SetActive (false);
 			mHitEffect.Stop();
 		}
 
@@ -210,7 +212,7 @@ public class HeroShipAI : MonoBehaviour
 		if(!mHasEntered || mTarget == null || mBoss == null 
 		   || (mBoss != null && (mBoss.mEntryTime>0f||mBoss.mDying) ) )
 		{
-			mInvincibleTimer = 2f;
+			mInvincibleTimer = 1.5f;
 			mShootTimer = 2f;
 			if(transform.position.y > -33f)
 			{
@@ -280,7 +282,7 @@ public class HeroShipAI : MonoBehaviour
 		}
 
 		//Move the ship ~Adam
-		if(!mFiringSuper)
+		if(!mFiringSuper && mBoss != null && mTarget != null)
 		{
 			transform.Translate(mMoveDir);
 		}
@@ -405,7 +407,7 @@ public class HeroShipAI : MonoBehaviour
 	{
 
 		//else
-		if(other.gameObject != this.gameObject && other.tag != "Player Bullet")// && mInvincibleTimer <= 1f)
+		if(other.gameObject != this.gameObject && other.tag != "Player Bullet" && !other.name.Contains("Asteroid"))// && mInvincibleTimer <= 1f)
 		{
 			//Debug.Log ("Stay "+other.gameObject.name);
 
@@ -447,8 +449,9 @@ public class HeroShipAI : MonoBehaviour
 	{
 		if(mInvincibleTimer <= 0f)
 		{
+			Camera.main.GetComponent<CameraShaker>().ShakeCameraGreen();
 			mGoForCenter = false;
-			mInvincibleTimer = 3f;
+			mInvincibleTimer = 1.5f;
 			mHitsRemaining -= damage;
 			if(GetComponent<AudioSource>() != null)
 			{
@@ -466,7 +469,7 @@ public class HeroShipAI : MonoBehaviour
 				{
 					Instantiate (mNextHeroShip, new Vector3(0f,-40f, -2f), Quaternion.identity);
 				}
-
+				Camera.main.GetComponent<CameraShaker>().ShakeCameraPurple();
 				Destroy(this.gameObject);
 			}
 		}

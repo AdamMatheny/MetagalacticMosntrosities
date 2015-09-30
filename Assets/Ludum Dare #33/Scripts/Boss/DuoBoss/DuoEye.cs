@@ -18,7 +18,8 @@ public class DuoEye : BossWeakPoint
 	
 	public SpriteRenderer mMainBodySprite;
 	
-	public override void Start(){
+	public override void Start()
+	{
 		
 		//mTarget = GameObject.FindGameObjectWithTag ("Player");
 		
@@ -66,25 +67,26 @@ public class DuoEye : BossWeakPoint
 	
 	public override void TakeDamage()
 	{
-		
-		if (GetComponentInParent<DuoBossReak> ().leftHornAlive == false && GetComponentInParent<DuoBossReak> ().rightHornAlive == false) 
+		if(!mInvincible)
 		{
-			
-			health --;
-			base.TakeDamage ();
-			//For flashing when hit ~Adam
-			if(mMainBodySprite != null)
+			if (GetComponentInParent<DuoBossReak> ().leftHornAlive == false && GetComponentInParent<DuoBossReak> ().rightHornAlive == false) 
 			{
-				mMainBodySprite.color = Color.Lerp (mMainBodySprite.color, Color.red, 1f);
+				
+				health --;
+				base.TakeDamage ();
+				//For flashing when hit ~Adam
+				if(mMainBodySprite != null)
+				{
+					mMainBodySprite.color = Color.Lerp (mMainBodySprite.color, Color.red, 1f);
+				}
+			}
+			
+			if (health <= 0) 
+			{
+				
+				BlowUpEye();
 			}
 		}
-		
-		if (health <= 0) 
-		{
-			
-			BlowUpEye();
-		}
-		
 	}
 	
 	public void BlowUpEye()

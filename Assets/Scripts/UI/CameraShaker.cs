@@ -44,13 +44,14 @@ public class CameraShaker : MonoBehaviour
 	void Update () 
 	{
 
-		if (rumbleTime <= 0) {
-
+		if (rumbleTime <= 0) 
+		{
 			GamePad.SetVibration (0, 0, 0);
 			GamePad.SetVibration (PlayerIndex.Two, 0, 0);
 
 			rumbleTime = 0;
-		} else {
+		} else 
+		{
 
 			rumbleTime -= Time.deltaTime;
 		}

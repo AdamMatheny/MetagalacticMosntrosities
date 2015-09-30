@@ -8,7 +8,7 @@ public class AsteroidCollision : MonoBehaviour
 
 	public GameObject mLaserFistEmblem;
 	public GameObject mBigBlastEmblem;
-
+	public bool mSpawnSupers = true;
 
 	void OnTriggerEnter(Collider other)
 	{
@@ -72,23 +72,25 @@ public class AsteroidCollision : MonoBehaviour
 
 		//float spawnChance = Random.Range(1,1000);
 		//if(spawnChance == 777)
-		if(PlayerPrefs.GetInt("AsteroidCount") >= PlayerPrefs.GetInt("AsteroidRequiredCount"))
+		if(mSpawnSupers)
 		{
-			if(PlayerPrefs.GetInt("SpawnLaserFist") == 0)
+			if(PlayerPrefs.GetInt("AsteroidCount") >= PlayerPrefs.GetInt("AsteroidRequiredCount"))
 			{
-				Instantiate(mBigBlastEmblem, new Vector3(transform.position.x, transform.position.y, -2f), Quaternion.identity);
-				PlayerPrefs.SetInt("SpawnLaserFist",1);
-			}
-			else if(PlayerPrefs.GetInt("SpawnLaserFist") == 1)
-			{
-				Instantiate(mLaserFistEmblem, new Vector3(transform.position.x, transform.position.y, -2f), Quaternion.identity);
-				PlayerPrefs.SetInt("SpawnLaserFist",0);
-			}
+				if(PlayerPrefs.GetInt("SpawnLaserFist") == 0)
+				{
+					Instantiate(mBigBlastEmblem, new Vector3(transform.position.x, transform.position.y, -2f), Quaternion.identity);
+					PlayerPrefs.SetInt("SpawnLaserFist",1);
+				}
+				else if(PlayerPrefs.GetInt("SpawnLaserFist") == 1)
+				{
+					Instantiate(mLaserFistEmblem, new Vector3(transform.position.x, transform.position.y, -2f), Quaternion.identity);
+					PlayerPrefs.SetInt("SpawnLaserFist",0);
+				}
 
-			PlayerPrefs.SetInt("AsteroidRequiredCount", PlayerPrefs.GetInt("AsteroidRequiredCount") + Random.Range(175,250));
+				PlayerPrefs.SetInt("AsteroidRequiredCount", PlayerPrefs.GetInt("AsteroidRequiredCount") + Random.Range(175,250));
 
+			}
 		}
-
 		Destroy(transform.parent.gameObject);
 	}
 }

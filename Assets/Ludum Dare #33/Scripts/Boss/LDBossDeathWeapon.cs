@@ -49,7 +49,8 @@ public class LDBossDeathWeapon : MonoBehaviour
 			mButtonIcon.enabled = false;
 		}
 		//Do stuff when below the Health Threshhold ~Adam
-		else if (mBossCentral.mCurrentHealth <= mHealthThreshHold) {
+		else if (mBossCentral.mCurrentHealth <= mHealthThreshHold) 
+		{
 
 			if(boss5){
 
@@ -64,26 +65,38 @@ public class LDBossDeathWeapon : MonoBehaviour
 			mButtonIcon.enabled = true;
 
 			//Fire weapon with Right Trigger button ~Adam
-			if (InputManager.ActiveDevice.RightTrigger.IsPressed || Input.GetKey (KeyCode.Space)) {
+			if (InputManager.ActiveDevice.RightTrigger.IsPressed || Input.GetKey (KeyCode.Space)) 
+			{
 				mDeathWeapon.SetActive (true);
 				mBossCentral.mCurrentOverheat += Time.deltaTime * mOverheatSpeed;
 
-				if (ram) {
-
+				if (ram) 
+				{
+					foreach(BossWeakPoint weakPoint in mBossCentral.mWeakPoints)
+					{
+						weakPoint.mInvincible = true;
+					}
 					transform.position = Vector3.MoveTowards (transform.position, player.transform.position+transform.up*mRamDistance, mRamSpeed);
 				}
 			}
 			//Turn Off Weapon when Right Trigger is released ~Adam
-			else {
+			else 
+			{
+				foreach(BossWeakPoint weakPoint in mBossCentral.mWeakPoints)
+				{
+					weakPoint.mInvincible = false;
+				}
 
-				if(mDeathWeapon != null){
-
+				if(mDeathWeapon != null)
+				{
 					mDeathWeapon.SetActive (false);
 				}
 
 				mBossCentral.mCurrentOverheat -= Time.deltaTime;
 			}
-		} else {
+		}
+		else 
+		{
 
 			mButtonIcon.enabled = false;
 

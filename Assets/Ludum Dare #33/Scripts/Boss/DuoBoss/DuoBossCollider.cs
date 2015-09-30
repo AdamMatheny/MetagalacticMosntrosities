@@ -20,13 +20,16 @@ public class DuoBossCollider : BossWeakPoint {
 
 	}
 
-	public override void TakeDamage(){
-		
-		health --;
-		base.TakeDamage ();
-		if (health <= 0) {
-			
-			BlowUpHorn();
+	public override void TakeDamage()
+	{
+		if(!mInvincible)
+		{
+			health --;
+			base.TakeDamage ();
+			if (health <= 0) 
+			{
+				BlowUpHorn();
+			}
 		}
 	}
 

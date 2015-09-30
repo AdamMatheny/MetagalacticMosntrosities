@@ -160,26 +160,27 @@ public class BossEye : BossWeakPoint
 
 	public override void TakeDamage()
 	{
-
-		if (GetComponentInParent<Boss1> ().leftHornAlive == false) {
-
-			if (GetComponentInParent<Boss1> ().rightHornAlive == false) {
-				
-				health --;
-				base.TakeDamage ();
-				//For flashing when hit ~Adam
-				if(mMainBodySprite != null)
+		if(!mInvincible)
+		{
+			if (GetComponentInParent<Boss1> ().leftHornAlive == false) 
+			{
+				if (GetComponentInParent<Boss1> ().rightHornAlive == false) 
 				{
-					mMainBodySprite.color = Color.Lerp (mMainBodySprite.color, Color.red, 1f);
+					health --;
+					base.TakeDamage ();
+					//For flashing when hit ~Adam
+					if(mMainBodySprite != null)
+					{
+						mMainBodySprite.color = Color.Lerp (mMainBodySprite.color, Color.red, 1f);
+					}
 				}
 			}
+
+			if (health <= 0) 
+			{
+				BlowUpEye();
+			}
 		}
-
-		if (health <= 0) {
-
-			BlowUpEye();
-		}
-
 	}
 
 	public void BlowUpEye()

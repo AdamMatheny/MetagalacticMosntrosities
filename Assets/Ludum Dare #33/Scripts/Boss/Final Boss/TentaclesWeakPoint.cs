@@ -28,20 +28,22 @@ public class TentaclesWeakPoint : BossWeakPoint {
 
 	public override void TakeDamage()
 	{
-		
-		health --;
-		
-		//For flashing when hit ~Adam
-		if(sprite != null)
+		if(!mInvincible)
 		{
-			sprite.color = Color.Lerp (sprite.color, Color.blue,1f);
-		}
-		
-		base.TakeDamage ();
-		
-		if (health <= 0) {
+			health --;
 			
-			BlowUp();
+			//For flashing when hit ~Adam
+			if(sprite != null)
+			{
+				sprite.color = Color.Lerp (sprite.color, Color.blue,1f);
+			}
+			
+			base.TakeDamage ();
+			
+			if (health <= 0) 
+			{
+				BlowUp();
+			}
 		}
 	}
 

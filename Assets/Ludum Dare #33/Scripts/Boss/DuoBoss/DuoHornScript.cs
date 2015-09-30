@@ -104,20 +104,24 @@ public class DuoHornScript : BossWeakPoint {
 	}
 	
 	
-	public override void TakeDamage(){
-		
-		health --;
-		base.TakeDamage ();
-
-		//For flashing when hit ~Adam
-		if(mHornSprite != null)
+	public override void TakeDamage()
+	{
+		if(!mInvincible)
 		{
-			mHornSprite.color = Color.Lerp (mHornSprite.color, Color.red,1f);
-		}
-		
-		if (health <= 0) {
+			health --;
+			base.TakeDamage ();
+
+			//For flashing when hit ~Adam
+			if(mHornSprite != null)
+			{
+				mHornSprite.color = Color.Lerp (mHornSprite.color, Color.red,1f);
+			}
 			
-			BlowUpHorn();
+			if (health <= 0) 
+			{
+				
+				BlowUpHorn();
+			}
 		}
 	}
 	
