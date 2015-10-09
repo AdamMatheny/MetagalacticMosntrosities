@@ -37,6 +37,8 @@ public class HeroShipAI : MonoBehaviour
 	public bool mHasEntered = false;
 
 	[SerializeField] private bool mGoForCenter = false;
+	float mGoForCenterTimer = 0f;
+
 	Vector3 mLastPos = Vector3.zero;
 	[SerializeField] private float mStuckTimer = 1f;
 	[SerializeField] private float mDodgeStuckTimer = 1f;
@@ -48,7 +50,6 @@ public class HeroShipAI : MonoBehaviour
 	[SerializeField] private bool mFiringSuper = false;
 
 	float mHoverTimer = 0.5f;
-
 	// Use this for initialization
 	void Start () 
 	{
@@ -174,7 +175,20 @@ public class HeroShipAI : MonoBehaviour
 			mMoveDir = Vector3.Normalize (mTargetPoint-transform.position);
 
 			//mTargetPoint = mTarget.transform.position;
+
+			//Don't try going to the center for too long ~Adam
+			mGoForCenterTimer += Time.deltaTime;
+			if(mGoForCenterTimer >= 3f)
+			{
+				mGoForCenter = false;
+				mGoForCenterTimer = 0f;
+			}
 		}
+		if(!mGoForCenter)
+		{
+			mGoForCenterTimer = 0;
+		}
+
 
 		//Try to get under the target point ~Adam
 		if(mDodgeTimer <= 0f)
